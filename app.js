@@ -41,14 +41,8 @@ const item2 = new Item({
 const item3 = new Item({
   name: "Call Laura"
 });
-/*
 
-item1.save();
-item2.save();
-item3.save();
-*/
-
-app.get("/", function(req, res) {
+app.get("/", function(_, res) {
 
 const day = date.getDate();
 Item.find({},function(err,item){
@@ -123,7 +117,7 @@ app.post("/:customListName",function(req,res){
 
 });
 
-app.get("/about", function(req, res){
+app.get("/about", function(_, res){
   res.render("about");
 });
 
